@@ -89,7 +89,7 @@ def jieba_cut():
         wc = WordCloud(
                 background_color=bg_color,                # 词云图背景颜色，除了常见几种，还可使用background_color=WordCloud(background_color=(135,206,250)设定
                 max_words=max_words,                      # 词云图显示最大词数
-                font_path="C:/Windows/Fonts/simhei.ttf",  # 使用字体
+                font_path="/usr/share/fonts/simhei.ttf",  # 使用字体
                 min_font_size=min_font_size,              # 字体最小尺寸
                 max_font_size=max_font_size,              # 字体最大尺寸
                 colormap=colors.ListedColormap(color_list),
