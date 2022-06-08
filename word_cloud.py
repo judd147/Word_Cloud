@@ -18,7 +18,7 @@ def main():
 def jieba_cut():
     st.header("词云分析")
     st.caption('上传文本在线生成词云图')
-    num_color = st.number_input("字体颜色数量", min_value=3, max_value=8, value=3)
+    num_color = st.number_input("字体颜色数量", min_value=1, max_value=8, value=3)
     with st.form(key='word_freq'):
         #文件设置
         fr = st.file_uploader("上传停用词", type='txt', key='word_cloud')
@@ -40,14 +40,20 @@ def jieba_cut():
             colloc_choice = st.selectbox("允许分词重复", options=['否','是'])
             prefer_horizontal = st.number_input("词汇横排比例", min_value=0.0, max_value=1.0, value=1.0, help="区间为0-1，越趋于0竖向分词比例越高")
         
+        color_list_input = []
         col01, col02, col03, col04 = st.columns(4)
-        with col01:
-            color1 = st.color_picker('字体颜色', '#228B22', help="自定义颜色")
-        with col02:
-            color2 = st.color_picker('字体颜色', '#CD661D', help="自定义颜色")
-        with col03:
-            color3 = st.color_picker('字体颜色', '#5CACEE', help="自定义颜色")
-        color_list_input = [color1,color2,color3]
+        if num_color >= 1:
+            with col01:
+                color1 = st.color_picker('字体颜色', '#228B22', help="自定义颜色")
+                color_list_input.append(color1)
+        if num_color >= 2:
+            with col02:
+                color2 = st.color_picker('字体颜色', '#CD661D', help="自定义颜色")
+                color_list_input.append(color2)
+        if num_color >= 3:
+            with col03:
+                color3 = st.color_picker('字体颜色', '#5CACEE', help="自定义颜色")
+                color_list_input.append(color3)
         if num_color >= 4:
             with col04:
                 color4 = st.color_picker('字体颜色', '#FFFFFF', help="自定义颜色")
