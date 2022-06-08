@@ -26,7 +26,7 @@ def jieba_cut():
         
         col1, col2, col3 = st.columns(3)
         with col1:
-            num_show = st.number_input("显示行数", min_value=1, max_value=100, value=100, help="显示词频表中前xxx个词")
+            num_show = st.number_input("输出词汇数（按排名）", min_value=1, max_value=100, value=100, help="显示词频表中前xxx个词")
             color1 = st.color_picker('字体颜色1', '#228B22', help="自定义颜色")
             min_font_size = st.number_input("字体最小值", min_value=1, max_value=50, value=5)
             bg_color = st.color_picker('背景颜色', '#FFFFFF', help="词云图背景颜色，默认为白色")
@@ -37,7 +37,7 @@ def jieba_cut():
         with col3:
             colloc_choice = st.selectbox("允许分词重复", options=['否','是'])
             color3 = st.color_picker('字体颜色3', '#5CACEE', help="自定义颜色")
-            prefer_horizontal = st.number_input("词云横排比例", min_value=0.0, max_value=1.0, value=1.0, help="区间为0-1，越趋于0竖向分词比例越高")
+            prefer_horizontal = st.number_input("词汇横排比例", min_value=0.0, max_value=1.0, value=1.0, help="区间为0-1，越趋于0竖向分词比例越高")
 
         run = st.form_submit_button(label='运行')
         
@@ -89,7 +89,7 @@ def jieba_cut():
         wc = WordCloud(
                 background_color=bg_color,                # 词云图背景颜色，除了常见几种，还可使用background_color=WordCloud(background_color=(135,206,250)设定
                 max_words=max_words,                      # 词云图显示最大词数
-                font_path='SIMHEI.TTF',                   # 使用字体
+                font_path="SIMHEI.TTF",  # 使用字体 SIMHEI.TTF
                 min_font_size=min_font_size,              # 字体最小尺寸
                 max_font_size=max_font_size,              # 字体最大尺寸
                 colormap=colors.ListedColormap(color_list),
