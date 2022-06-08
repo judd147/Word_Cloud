@@ -1,2 +1,3 @@
 jieba
 wordcloud
+imageio
