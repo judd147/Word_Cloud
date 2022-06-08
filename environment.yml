@@ -1,5 +1,7 @@
 name: word_cloud
 
 dependencies:
-  - jieba
-  - wordcloud
+- pip
+  - pip:
+      - jieba
+      - wordcloud
