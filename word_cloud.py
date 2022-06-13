@@ -37,7 +37,7 @@ def jieba_cut():
             
             
         with col3:
-            colloc_choice = st.selectbox("是否允许词汇重复显示", options=['是','否'], value='否')
+            colloc_choice = st.selectbox("是否允许词汇重复显示", options=['否','是'])
             prefer_horizontal = st.number_input("词汇横排比例", min_value=0.0, max_value=1.0, value=1.0, help="区间为0-1，越趋于0竖向分词比例越高")
         
         color_list_input = []
