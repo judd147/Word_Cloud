@@ -27,12 +27,12 @@ def jieba_cut():
         
         col1, col2, col3 = st.columns(3)
         with col1:
-            num_show = st.number_input("输出词汇数（按排名）", min_value=1, max_value=100, value=100, help="显示词频表中前xxx个词")
+            num_show = st.number_input("输出词汇数（按排名）", min_value=1, max_value=500, value=100, help="显示词频表中前xxx个词")
             min_font_size = st.number_input("字体最小值", min_value=1, max_value=50, value=5)
             bg_color = st.color_picker('背景颜色', '#FFFFFF', help="词云图背景颜色，默认为白色")
             
         with col2:
-            max_words = st.number_input("显示最大词数", min_value=1, max_value=100, value=80, help="词云图显示最大词数")
+            max_words = st.number_input("显示最大词数", min_value=1, max_value=500, value=80, help="词云图显示最大词数")
             max_font_size = st.number_input("字体最大值", min_value=50, max_value=300, value=150)
             
             
