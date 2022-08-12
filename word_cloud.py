@@ -72,6 +72,7 @@ def jieba_cut():
         new_stop_word_list = []
         for stop_word in stop_word_list:
             new_stop_word_list.append(stop_word)
+        st.write(new_stop_word_list)
         
         #输出词语出现的次数
         s = fr_xyj.read()
