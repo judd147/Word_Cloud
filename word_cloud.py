@@ -79,7 +79,7 @@ def jieba_cut():
         word_dict= {}
         word_list = ''
         for word in words:
-            if (len(word) > 1 and word not in new_stop_word_list):
+            if (len(word) > 1 and not word in new_stop_word_list):
                 word_list = word_list + ' ' + word
                 if (word_dict.get(word)):
                     word_dict[word] = word_dict[word] + 1
