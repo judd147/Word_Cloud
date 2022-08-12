@@ -71,8 +71,7 @@ def jieba_cut():
         stop_word_list = fr.readlines()
         new_stop_word_list = []
         for stop_word in stop_word_list:
-            new_stop_word_list = new_stop_word_list.append(stop_word)
-        st.write(new_stop_word_list)
+            new_stop_word_list.append(stop_word)
         
         #输出词语出现的次数
         s = fr_xyj.read()
@@ -80,7 +79,7 @@ def jieba_cut():
         word_dict= {}
         word_list = ''
         for word in words:
-            if (len(word) > 1 and not word in new_stop_word_list):
+            if (len(word) > 1 and word not in new_stop_word_list):
                 word_list = word_list + ' ' + word
                 if (word_dict.get(word)):
                     word_dict[word] = word_dict[word] + 1
