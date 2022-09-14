@@ -21,8 +21,8 @@ def jieba_cut():
     num_color = st.number_input("字体颜色数量", min_value=1, max_value=8, value=3)
     with st.form(key='word_freq'):
         #文件设置
-        fr = st.file_uploader("上传停用词", type='txt', key='word_cloud')
-        fr_xyj = st.file_uploader("上传分析文本", type='txt', key='word_cloud')
+        fr = st.file_uploader("上传停用词", type='txt', key='stop_word')
+        fr_xyj = st.file_uploader("上传分析文本", type='txt', key='text')
         shape = st.file_uploader("上传词云形状", type=['jpg','png'], key='word_cloud')
         
         col1, col2, col3 = st.columns(3)
