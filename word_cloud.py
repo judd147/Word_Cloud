@@ -74,7 +74,7 @@ def jieba_cut():
             new_stop_word_list.append(stop_word)
         
         #输出词语出现的次数
-        s = fr_xyj.read()
+        s = fr_xyj.read(encoding='utf-16')
         words = jieba.cut(s, cut_all=False)
         word_dict= {}
         word_list = ''
