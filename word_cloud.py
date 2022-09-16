@@ -92,7 +92,7 @@ def jieba_cut():
         wordssc = pd.DataFrame(data=sort_words)
         wordssc = wordssc.reset_index()
         wordssc.columns = ['序号','关键词','词频']
-        wordssc.drop(index=0, inplace=True)
+        #wordssc.drop(index=0, inplace=True)
         
         st.subheader('词频表预览')
         st.dataframe(wordssc[0:num_show])
